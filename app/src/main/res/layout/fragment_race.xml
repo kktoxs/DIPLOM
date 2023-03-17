@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="10dp"
+    tools:context=".RaceFragment">
+
+    <include
+        android:id="@+id/race_item"
+        layout="@layout/race_item" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/more_info_button"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:backgroundTint="@color/blue"
+        android:text="@string/results"
+        app:icon="@drawable/ic_baseline_view_headline_24"
+        app:layout_constraintStart_toStartOf="@id/race_item"
+        app:layout_constraintTop_toBottomOf="@id/race_item" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/more_info_button">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            tools:text="Продолжительность гонки 2 часа 30 минут.
+Стартовый взнос составляет 1500 рублей для всех классов при онлайн регистрации.
+Взнос в день гонки составляет 2000 рублей.
+Взнос при отмене участия, не возвращается.
+Перевод на карту по номеру тел: +79375150035 Сбер (Михаил Александрович М.) и Тинь. (Михаил М.) В комментарии указать стартовый номер и класс.
+Для регистрации обязательно!
+- страховка жизни на сумму от 100 000 руб.
+- оплата взноса
+(Фото документов лучше скинуть личным сообщением в телеграм на номер +79375150035, чтобы не тратить время на месте регистрации)
+Чат в телеге: https://t.me/+rVpkg0OMqoc5YzEy." />
+
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
