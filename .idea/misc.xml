@@ -10,9 +10,10 @@
         <entry key="..\:/DIPLOM/app/src/main/res/drawable/ic_outline_image_24.xml" value="0.179" />
         <entry key="..\:/DIPLOM/app/src/main/res/drawable/race_item_background.xml" value="0.3625" />
         <entry key="..\:/DIPLOM/app/src/main/res/layout/activity_main.xml" value="0.36302083333333335" />
-        <entry key="..\:/DIPLOM/app/src/main/res/layout/fragment_race.xml" value="0.5" />
+        <entry key="..\:/DIPLOM/app/src/main/res/layout/fragment_auth.xml" value="0.36302083333333335" />
+        <entry key="..\:/DIPLOM/app/src/main/res/layout/fragment_race.xml" value="0.14666666666666667" />
         <entry key="..\:/DIPLOM/app/src/main/res/layout/fragment_races.xml" value="0.3333333333333333" />
-        <entry key="..\:/DIPLOM/app/src/main/res/layout/fragment_races_list.xml" value="0.3625" />
+        <entry key="..\:/DIPLOM/app/src/main/res/layout/fragment_races_list.xml" value="0.22" />
         <entry key="..\:/DIPLOM/app/src/main/res/layout/race_item.xml" value="0.3333333333333333" />
       </map>
     </option>
