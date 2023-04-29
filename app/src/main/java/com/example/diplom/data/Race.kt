@@ -27,7 +27,8 @@ data class Data(
     val competitorsCount: Int,
     val description: String,
     val logo: String,
-    val titlePicture: String
+    val titlePicture: String,
+    val name: String
 )
 
 data class Images(

@@ -2,14 +2,12 @@ package com.example.diplom.view
 
 import android.content.Context
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.lifecycle.ViewModelProvider
-import com.example.diplom.R
+import com.bumptech.glide.Glide
 import com.example.diplom.RaceViewModel
 import com.example.diplom.data.FullRace
 import com.example.diplom.databinding.FragmentRaceBinding
@@ -32,14 +30,22 @@ class RaceFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel.currRaceInfo.observe(viewLifecycleOwner){
-            if(it != null){
+        viewModel.currRaceInfo.observe(viewLifecycleOwner) {
+            if (it != null) {
                 setupView(it)
             }
         }
     }
-    private fun setupView(race: FullRace){
-        Log.d("description", race.data.description)
-        binding.fullDescriptionTv.text = race.data.description
+
+    private fun setupView(race: FullRace) {
+        binding.nameTv.text = race.data.name
+        binding.cityTv.text = race.data.city
+        binding.competitorsTv.text = race.data.competitorsCount.toString()
+        binding.descriptionTv.text = race.data.description
+
+
+        Glide.with(requireContext())
+            .load("https://fget.marshalone.ru/files/race/uid/"+race.data.logo)
+            .into(binding.logoIv)
     }
 }

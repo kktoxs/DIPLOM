@@ -5,7 +5,6 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.diplom.data.FullRace
-import com.example.diplom.data.Race
 import com.example.diplom.data.RacesList
 import com.example.diplom.data.Repository
 import kotlinx.coroutines.Dispatchers
@@ -28,7 +27,7 @@ class RaceViewModel(): ViewModel() {
         viewModelScope.launch(Dispatchers.IO) {
             val response = repository.getRaceInfo(uid)
             currRaceInfo.postValue(response.body())
-            Log.d("fullRace", response.body().toString())
+            Log.d("fullRace", currRaceInfo.value.toString())
         }
     }
 }

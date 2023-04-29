@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
@@ -11,14 +10,14 @@
         <entry key="..\:/DIPLOM/app/src/main/res/drawable/race_item_background.xml" value="0.3625" />
         <entry key="..\:/DIPLOM/app/src/main/res/layout/activity_main.xml" value="0.36302083333333335" />
         <entry key="..\:/DIPLOM/app/src/main/res/layout/fragment_auth.xml" value="0.36302083333333335" />
-        <entry key="..\:/DIPLOM/app/src/main/res/layout/fragment_race.xml" value="0.14666666666666667" />
+        <entry key="..\:/DIPLOM/app/src/main/res/layout/fragment_race.xml" value="0.16666666666666666" />
         <entry key="..\:/DIPLOM/app/src/main/res/layout/fragment_races.xml" value="0.3333333333333333" />
         <entry key="..\:/DIPLOM/app/src/main/res/layout/fragment_races_list.xml" value="0.22" />
         <entry key="..\:/DIPLOM/app/src/main/res/layout/race_item.xml" value="0.3333333333333333" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" project-jdk-name="jbr-17" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
