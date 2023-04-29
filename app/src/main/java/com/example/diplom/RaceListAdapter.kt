@@ -27,7 +27,7 @@ class RaceListAdapter(private val context: Context) :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RaceViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(
-            R.layout.race_item,
+            R.layout.new_race_item,
             parent,
             false
         )

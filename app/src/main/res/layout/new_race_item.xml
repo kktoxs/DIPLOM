@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="10dp">
+
+        <ImageView
+            android:id="@+id/race_iv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxHeight="200dp"
+            android:scaleType="fitCenter"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_height="200dp" />
+
+        <TextView
+            android:id="@+id/title_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:fontFamily="@font/comfortaa"
+            android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+            app:layout_constraintTop_toBottomOf="@id/race_iv"
+            tools:text="КУБОК ГЛАВЫ АДМИНИСТРАЦИИ И КУБОК СТАВРОПОЛЬСКОГО КРАЯ ПО ЭНДУРО-ЭКСТРИМ" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:textStyle="bold"
+            android:text="@string/gallery"
+            android:fontFamily="@font/comfortaa"
+            android:textColor="@color/bittersweet"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            app:layout_constraintBottom_toBottomOf="@id/date_iv"
+            app:layout_constraintEnd_toEndOf="@id/title_tv"
+            app:layout_constraintTop_toTopOf="@id/place_iv"
+            />
+
+        <ImageView
+            android:id="@+id/place_iv"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/ic_baseline_place_24"
+            app:layout_constraintStart_toStartOf="@id/title_tv"
+            app:layout_constraintTop_toBottomOf="@id/title_tv"
+            app:tint="@color/bittersweet" />
+
+        <TextView
+            android:id="@+id/place_tv"
+            style="@style/raceItemText"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_marginStart="10dp"
+            app:layout_constraintBottom_toBottomOf="@id/place_iv"
+            app:layout_constraintStart_toEndOf="@id/place_iv"
+            app:layout_constraintTop_toTopOf="@id/place_iv"
+            tools:text="Кострома" />
+
+        <ImageView
+            android:id="@+id/date_iv"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/ic_baseline_date_range_24"
+            app:layout_constraintStart_toStartOf="@+id/place_iv"
+            app:layout_constraintTop_toBottomOf="@+id/place_iv"
+            app:tint="@color/bittersweet" />
+
+        <TextView
+            android:id="@+id/date_tv"
+            style="@style/raceItemText"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_marginStart="10dp"
+            app:layout_constraintStart_toEndOf="@+id/date_iv"
+            app:layout_constraintTop_toTopOf="@+id/date_iv"
+            tools:text="12.08.2023" />
+
+        <ImageView
+            android:id="@+id/race_type_iv"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_baseline_directions_bike_24"
+            app:layout_constraintStart_toEndOf="@id/guideline"
+            app:layout_constraintTop_toBottomOf="@+id/date_iv"
+            app:layout_constraintTop_toTopOf="@id/place_iv"
+            app:tint="@color/bittersweet" />
+
+        <TextView
+            android:id="@+id/race_type_tv"
+            style="@style/raceItemText"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_marginStart="10dp"
+            app:layout_constraintStart_toEndOf="@+id/race_type_iv"
+            app:layout_constraintTop_toTopOf="@+id/race_type_iv"
+            tools:text="ЭНДУРО-ЭКСТРИМ" />
+
+        <ImageView
+            android:id="@+id/racers_count_iv"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_baseline_groups_24"
+            app:layout_constraintStart_toEndOf="@id/guideline"
+            app:layout_constraintTop_toTopOf="@id/date_iv"
+            app:tint="@color/bittersweet" />
+
+        <TextView
+            android:id="@+id/racers_count_tv"
+            style="@style/raceItemText"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_marginStart="10dp"
+            app:layout_constraintStart_toEndOf="@+id/racers_count_iv"
+            app:layout_constraintTop_toTopOf="@+id/racers_count_iv"
+            tools:text="11" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.28" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>
+

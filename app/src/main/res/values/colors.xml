@@ -10,5 +10,9 @@
     <color name="orange">#ffa500</color>
     <color name="grey">#e8e8e8</color>
     <color name="text_black">#333333</color>
-    <color name="blue">#254c74</color>
+
+    <color name="blue">#8783D1</color>
+    <color name="champagne">#F6E7CB</color>
+    <color name="bittersweet">#F97068</color>
+    <color name="licorice">#220C10</color>
 </resources>
