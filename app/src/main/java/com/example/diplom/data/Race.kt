@@ -24,6 +24,8 @@ data class FullRace(
 data class Data(
     val Images: List<Images>,
     val city: String,
+    val date: String,
+    val sportType: String,
     val competitorsCount: Int,
     val description: String,
     val logo: String,

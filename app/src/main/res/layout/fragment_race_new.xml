@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/title_iv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="fitCenter"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/BottomCornersCut"
+            tools:layout_height="200dp"
+            tools:src="@color/orange" />
+
+        <TextView
+            android:id="@+id/name_tv"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:fontFamily="@font/comfortaa"
+            android:gravity="center"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/logo_iv"
+            app:layout_constraintEnd_toStartOf="@id/logo_iv"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title_iv"
+            tools:text="Four seasons - пролог Республики Беларусь по эндуро" />
+
+        <ImageView
+            android:id="@+id/logo_iv"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title_iv"
+            tools:src="@color/bittersweet" />
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/info_vp"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginHorizontal="40dp"
+            app:layout_constraintTop_toBottomOf="@id/name_tv"
+            tools:background="@color/text_black" />
+
+        <TextView
+            android:id="@+id/description_tv"
+            style="@style/MaterialAlertDialog.Material3.Body.Text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="15"
+            app:layout_constraintTop_toBottomOf="@id/info_vp"
+            tools:text="Даты 17-19 июня
+                                                                                                    17.06 Пролог: часовой (эндуро-стадион + небольшой трек) для двух классов Pro и B3
+                                                                                                    18.06 Первый внедорожный гоночный день:
+                                                                                                    -Base 1 (B1), Base 2 (B2), Open Hobby (OH): одна трасса, сложность трека - lite
+                                                                                                    - Base 3 (B3): одна трасса, сложность трека - medium
+                                                                                                    - Profi (Pro): сложность трека - heavy
+                                                                                                    19.06 Второй гоночный день:
+                                                                                                    - Base 1 (B1), Open Hobby (OH) - одна трасса, сложность lite
+                                                                                                    - Base 2 (B2): едут по трассе В3, сложность medium
+                                                                                                    - Base 3 (B3): едут по трассе Pro, сложность heavy
+                                                                                                    - Profi (Pro): сложность heavy
+                                                                                                    Документы:
+                                                                                                    - Pro и В3: медицинская справка, страховой полис (страховой случай не менее чем на 1000 BYN), лицензия (разовая на месте 30 BYN, для граждан России - подходит лицензия МФР), участие в соревновании - 120 BYN (на месте проведения)
+                                                                                                    - В2, В1, ОН: медицинская справка (подходит водительская), страховой полис ( страховой случай не менее чем на 1000 BYN), участие в соревновании - 100 BYN (на месте проведения)
+                                                                                                    Документы направлять на электронный адрес enduro4seasons00@mail.ru ОДНИМ ФАЙЛОМ с фамилией и классом (отправляя документы, Вы соглашаетесь на обработку Ваших данных с целью участия в соревновании). Только после проверки документов, Вы увидите себя в списке зарегистрированных.
+                                                                                                    Классы делятся в зависимости от характеристик мотоцикла, в некоторых случаях - и от регалий спортсменов (подробнее в информации о соревновании)"
+
+            />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:backgroundTint="@color/orange"
+            tools:visibility="gone" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

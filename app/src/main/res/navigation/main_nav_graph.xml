@@ -13,12 +13,19 @@
         <action
             android:id="@+id/action_races_to_raceFragment"
             app:destination="@id/raceFragment" />
+        <action
+            android:id="@+id/action_races_to_galleryFragment"
+            app:destination="@id/galleryFragment" />
     </fragment>
     <fragment
         android:id="@+id/raceFragment"
         android:name="com.example.diplom.view.RaceFragment"
         android:label="fragment_race"
-        tools:layout="@layout/fragment_race" />
+        tools:layout="@layout/fragment_race" >
+        <action
+            android:id="@+id/action_raceFragment_to_galleryFragment"
+            app:destination="@id/galleryFragment" />
+    </fragment>
     <fragment
         android:id="@+id/new_photo"
         android:name="com.example.diplom.view.NewPhotoFragment"
@@ -29,4 +36,9 @@
         android:name="com.example.diplom.view.CartFragment"
         android:label="fragment_cart"
         tools:layout="@layout/fragment_cart" />
+    <fragment
+        android:id="@+id/galleryFragment"
+        android:name="com.example.diplom.view.GalleryFragment"
+        android:label="fragment_gallery"
+        tools:layout="@layout/fragment_gallery" />
 </navigation>

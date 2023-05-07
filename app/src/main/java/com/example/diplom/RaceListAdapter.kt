@@ -6,15 +6,22 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.view.isVisible
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.diplom.data.Race
+import com.google.android.material.button.MaterialButton
 
-class RaceListAdapter(private val context: Context) :
+class RaceListAdapter(
+    private val context: Context,
+    //private val checkIfGalleryIsEmpty: (String) -> Boolean
+) :
     ListAdapter<Race, RaceListAdapter.RaceViewHolder>(RaceDiffCallback()) {
 
     var onRaceClickListener: ((Race) -> Unit)? = null
+    var onGalleryButtonClickListener: ((Race) -> Unit)? = null
 
     class RaceViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
         val title: TextView = view.findViewById(R.id.title_tv)
@@ -23,6 +30,7 @@ class RaceListAdapter(private val context: Context) :
         val racersCount: TextView = view.findViewById(R.id.racers_count_tv)
         val place: TextView = view.findViewById(R.id.place_tv)
         val image: ImageView = view.findViewById(R.id.race_iv)
+        val galleryButton: MaterialButton = view.findViewById(R.id.gallery_button)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RaceViewHolder {
@@ -42,6 +50,8 @@ class RaceListAdapter(private val context: Context) :
         holder.racersCount.text = race.competitorsCount.toString()
         holder.date.text = race.date
 
+        //holder.galleryButton.isVisible = checkIfGalleryIsEmpty(race.uid)
+
         Glide.with(context)
             .load("https://fget.marshalone.ru/files/race/uid/" + race.titlePicture)
             .into(holder.image)
@@ -49,5 +59,21 @@ class RaceListAdapter(private val context: Context) :
         holder.view.setOnClickListener {
             onRaceClickListener?.invoke(race)
         }
+
+        holder.galleryButton.setOnClickListener {
+            onGalleryButtonClickListener?.invoke(race)
+        }
+
     }
+}
+
+class RaceDiffCallback : DiffUtil.ItemCallback<Race>() {
+    override fun areItemsTheSame(oldItem: Race, newItem: Race): Boolean {
+        return oldItem.uid == newItem.uid
+    }
+
+    override fun areContentsTheSame(oldItem: Race, newItem: Race): Boolean {
+        return oldItem == newItem
+    }
+
 }

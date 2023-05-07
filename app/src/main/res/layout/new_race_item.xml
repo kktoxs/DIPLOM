@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="10dp">
+    android:layout_margin="10dp"
+    app:strokeColor="@color/white">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -33,16 +34,16 @@
 
 
         <com.google.android.material.button.MaterialButton
-            android:textStyle="bold"
-            android:text="@string/gallery"
-            android:fontFamily="@font/comfortaa"
-            android:textColor="@color/bittersweet"
+            android:id="@+id/gallery_button"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
+            android:fontFamily="@font/comfortaa"
+            android:text="@string/gallery"
+            android:textColor="@color/bittersweet"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@id/date_iv"
             app:layout_constraintEnd_toEndOf="@id/title_tv"
-            app:layout_constraintTop_toTopOf="@id/place_iv"
-            />
+            app:layout_constraintTop_toTopOf="@id/place_iv" />
 
         <ImageView
             android:id="@+id/place_iv"
@@ -58,8 +59,10 @@
             android:id="@+id/place_tv"
             style="@style/raceItemText"
             android:layout_width="wrap_content"
-            android:layout_height="20dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
+            android:gravity="start"
+            android:maxWidth="60dp"
             app:layout_constraintBottom_toBottomOf="@id/place_iv"
             app:layout_constraintStart_toEndOf="@id/place_iv"
             app:layout_constraintTop_toTopOf="@id/place_iv"
@@ -99,8 +102,11 @@
             android:id="@+id/race_type_tv"
             style="@style/raceItemText"
             android:layout_width="wrap_content"
-            android:layout_height="20dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
+            android:gravity="start"
+            android:maxWidth="120dp"
+            app:layout_constraintBottom_toBottomOf="@id/race_type_iv"
             app:layout_constraintStart_toEndOf="@+id/race_type_iv"
             app:layout_constraintTop_toTopOf="@+id/race_type_iv"
             tools:text="ЭНДУРО-ЭКСТРИМ" />

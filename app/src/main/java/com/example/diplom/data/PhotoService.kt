@@ -7,14 +7,14 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface PhotoService {
-    @GET("races")
-    suspend fun getRaces(
-        @Query("date_from") date_from: String,
-        @Query("date_to") date_to: String
-    ): Response<RacesList>
+    @GET("getPreviews?limit=4")
+    suspend fun getPreviews(
+        @Query("raceUID") raceUID: String,
+        @Query("offset") offset: Int
+    ): Response<Preview>
 
     companion object {
-        private const val BASE_URL = "https://marshalone.ru/api/public/"
+        private const val BASE_URL = "https://photo.marshalone.ru/api/photo/"
         fun create(): PhotoService {
             val retrofit = Retrofit.Builder()
                 .addConverterFactory(GsonConverterFactory.create())

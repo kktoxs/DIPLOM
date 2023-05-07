@@ -12,6 +12,12 @@ interface M1Service {
         @Query("ruid") uid: String
     ): Response<FullRace>
 
+    @GET("races")
+    suspend fun getRaces(
+        @Query("date_from") date_from: String,
+        @Query("date_to") date_to: String
+    ): Response<RacesList>
+
     companion object {
         private const val BASE_URL = "https://marshalone.ru/api/public/"
         fun create(): M1Service {
