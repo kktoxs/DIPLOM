@@ -3,19 +3,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    tools:layout_height="100dp"
     android:layout_height="match_parent"
     android:background="@drawable/info_item_background"
     android:orientation="vertical"
-    android:paddingTop="5dp">
+    android:paddingTop="5dp"
+    tools:layout_height="100dp">
 
     <ImageView
         android:id="@+id/info_image"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_gravity="center"
-        app:tint="@color/champagne"
-        android:src="@drawable/ic_baseline_place_24" />
+        android:src="@drawable/ic_baseline_place_24"
+        app:tint="@color/champagne" />
 
     <TextView
         android:id="@+id/title"

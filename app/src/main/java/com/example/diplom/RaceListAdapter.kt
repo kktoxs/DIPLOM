@@ -26,8 +26,9 @@ class RaceListAdapter(
     class RaceViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
         val title: TextView = view.findViewById(R.id.title_tv)
         val date: TextView = view.findViewById(R.id.date_tv)
-        val raceType: TextView = view.findViewById(R.id.race_type_tv)
-        val racersCount: TextView = view.findViewById(R.id.racers_count_tv)
+
+        //val raceType: TextView = view.findViewById(R.id.race_type_tv)
+        //val racersCount: TextView = view.findViewById(R.id.racers_count_tv)
         val place: TextView = view.findViewById(R.id.place_tv)
         val image: ImageView = view.findViewById(R.id.race_iv)
         val galleryButton: MaterialButton = view.findViewById(R.id.gallery_button)
@@ -45,9 +46,9 @@ class RaceListAdapter(
     override fun onBindViewHolder(holder: RaceViewHolder, position: Int) {
         val race = getItem(position)
         holder.title.text = race.name
-        holder.raceType.text = race.sportType
+        //holder.raceType.text = race.sportType
         holder.place.text = race.city
-        holder.racersCount.text = race.competitorsCount.toString()
+        //holder.racersCount.text = race.competitorsCount.toString()
         holder.date.text = race.date
 
         //holder.galleryButton.isVisible = checkIfGalleryIsEmpty(race.uid)

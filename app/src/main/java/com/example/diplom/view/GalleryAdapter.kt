@@ -13,7 +13,7 @@ import com.bumptech.glide.Glide
 import com.example.diplom.R
 
 
-class GalleryAdapter(private val context: Context) :
+class GalleryAdapter(private val context: Context, private val callback: (Int) -> Unit) :
     ListAdapter<String, GalleryAdapter.GalleryViewHolder>(GalleryDiffUtilCallback()) {
     class GalleryViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
         val image: ImageView = view.findViewById(R.id.preview_image)
@@ -32,11 +32,26 @@ class GalleryAdapter(private val context: Context) :
         Glide.with(context)
             .load("https://photo.marshalone.ru/api/photo/file/get?type=resized&UUID=$previewURL")
             .into(holder.image)
+
+        if (itemCount - position == 1) {
+            callback(itemCount)
+            Log.d("item count", itemCount.toString())
+            Log.d("position", position.toString())
+        }
+    }
+
+    fun updateList(newData: List<String>) {
+        if (newData.isNotEmpty()) {
+            val newList = currentList + newData
+            submitList(newList)
+        } else {
+            Log.d("updateList", "empty")
+        }
     }
 }
 
 class GalleryDiffUtilCallback : DiffUtil.ItemCallback<String>() {
-     override fun areItemsTheSame(oldItem: String, newItem: String): Boolean {
+    override fun areItemsTheSame(oldItem: String, newItem: String): Boolean {
         return oldItem.length == newItem.length
     }
 
