@@ -5,11 +5,22 @@
     android:layout_height="match_parent"
     tools:context=".view.GalleryFragment">
 
+    <TextView
+        android:id="@+id/no_photos"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fontFamily="@font/comfortaa"
+        android:gravity="center"
+        android:text="Нет фотографий"
+        android:textColor="@color/bittersweet"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:visibility="gone" />
+
     <androidx.recyclerview.widget.RecyclerView
-        tools:listitem="@layout/gallery_item"
         android:id="@+id/gallery_rv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        />
+        tools:listitem="@layout/gallery_item" />
 
 </FrameLayout>

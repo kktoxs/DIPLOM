@@ -1,12 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".view.RaceListFragment">
+
+    <Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@color/champagne">
+
+        <TextView
+            style="@style/DateText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:text="Гонки с"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/from_tv"
+            style="@style/DateText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            tools:text="21.04.2022" />
+
+        <TextView
+            style="@style/DateText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:text="по"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/to_tv"
+            style="@style/DateText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="23.12.2023" />
+
+    </Toolbar>
+
+    <TextView
+        android:id="@+id/races_not_found"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fontFamily="@font/comfortaa"
+        android:gravity="center"
+        android:paddingHorizontal="20dp"
+        android:text="@string/no_races"
+        android:textColor="@color/bittersweet"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/races_rv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:listitem="@layout/race_item" />
-</FrameLayout>
+        tools:listitem="@layout/new_race_item" />
+</LinearLayout>

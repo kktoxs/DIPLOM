@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
 import androidx.activity.viewModels
+import androidx.navigation.NavGraph
 import androidx.navigation.Navigation
 import androidx.navigation.ui.NavigationUI
 import com.example.diplom.R
@@ -27,7 +28,18 @@ class MainActivity : AppCompatActivity() {
 
         val navController = Navigation.findNavController(this, R.id.nav_host_fragment)
         bottomNavigationView = findViewById(R.id.bottom_nav_bar)
+       /* bottomNavigationView.setOnItemSelectedListener { it ->
+            val selectedGraph = navController.graph.findNode(it.itemId) as NavGraph
+            selectedGraph.let {
+                navController.popBackStack(it.startDestinationId, false)
+            }
+            //navController.popBackStack()
+        }
+        bottomNavigationView.setOnItemSelectedListener {
+            navController.popBackStack()
+        }*/
         NavigationUI.setupWithNavController(bottomNavigationView, navController)
+
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

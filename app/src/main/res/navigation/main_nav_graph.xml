@@ -14,22 +14,28 @@
         android:id="@+id/raceListFragment"
         android:name="com.example.diplom.view.RaceListFragment"
         android:label="fragment_race_list"
-        tools:layout="@layout/fragment_race_list" >
+        tools:layout="@layout/fragment_race_list">
         <action
             android:id="@+id/action_races_to_raceFragment"
-            app:destination="@id/raceFragment" />
+            app:destination="@id/raceFragment"
+            app:popUpTo="@id/main_nav_graph"
+            app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_races_to_galleryFragment"
-            app:destination="@id/galleryFragment" />
+            app:destination="@id/galleryFragment"
+            app:popUpTo="@id/main_nav_graph"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/raceFragment"
         android:name="com.example.diplom.view.RaceFragment"
         android:label="fragment_race"
-        tools:layout="@layout/fragment_race" >
+        tools:layout="@layout/fragment_race">
         <action
             android:id="@+id/action_raceFragment_to_galleryFragment"
-            app:destination="@id/galleryFragment" />
+            app:destination="@id/galleryFragment"
+            app:popUpTo="@id/main_nav_graph"
+            app:popUpToInclusive="true" />
     </fragment>
 
     <fragment

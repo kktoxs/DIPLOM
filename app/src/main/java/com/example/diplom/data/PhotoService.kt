@@ -7,7 +7,7 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface PhotoService {
-    @GET("getPreviews?limit=4")
+    @GET("getPreviews?limit=8")
     suspend fun getPreviews(
         @Query("raceUID") raceUID: String,
         @Query("offset") offset: Int

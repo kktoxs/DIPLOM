@@ -62,7 +62,6 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:gravity="start"
-            android:maxWidth="60dp"
             app:layout_constraintBottom_toBottomOf="@id/place_iv"
             app:layout_constraintStart_toEndOf="@id/place_iv"
             app:layout_constraintTop_toTopOf="@id/place_iv"
@@ -88,7 +87,7 @@
             app:layout_constraintTop_toTopOf="@+id/date_iv"
             tools:text="12.08.2023" />
 
-        <ImageView
+        <!--<ImageView
             android:id="@+id/race_type_iv"
             android:layout_width="20dp"
             android:layout_height="20dp"
@@ -128,7 +127,7 @@
             android:layout_marginStart="10dp"
             app:layout_constraintStart_toEndOf="@+id/racers_count_iv"
             app:layout_constraintTop_toTopOf="@+id/racers_count_iv"
-            tools:text="11" />
+            tools:text="11" />-->
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline"
