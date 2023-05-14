@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
+
     <item
-        android:id="@+id/new_photo"
-        android:icon="@drawable/outline_photo_camera_24"
-        android:title="@string/new_photo" />
-    <item
-        android:id="@+id/races"
+        android:id="@+id/racesList"
         android:icon="@drawable/racing_helmet"
         android:title="@string/races" />
+
+    <item
+        android:id="@+id/photoEditor"
+        android:icon="@drawable/outline_photo_camera_24"
+        android:title="@string/new_photo" />
+
     <item
         android:id="@+id/cart"
         android:icon="@drawable/outline_shopping_cart_24"
