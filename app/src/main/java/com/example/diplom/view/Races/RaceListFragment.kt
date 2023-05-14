@@ -1,4 +1,4 @@
-package com.example.diplom.view
+package com.example.diplom.view.Races
 
 import android.os.Bundle
 import android.util.Log
@@ -12,7 +12,6 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.diplom.R
 import com.example.diplom.RaceListAdapter
-import com.example.diplom.RaceViewModel
 import com.example.diplom.databinding.FragmentRaceListBinding
 import com.google.android.material.datepicker.MaterialDatePicker
 import java.text.SimpleDateFormat
@@ -50,7 +49,9 @@ class RaceListFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         setupAdapter()
         binding.toolbar.setOnClickListener {
-            val builder = MaterialDatePicker.Builder.dateRangePicker()
+            val builder = MaterialDatePicker.Builder
+                .dateRangePicker()
+                .setTheme(R.style.ThemeOverlay_App_DatePicker)
             val now = Calendar.getInstance()
             builder.setSelection(androidx.core.util.Pair(now.timeInMillis, now.timeInMillis))
             val picker = builder.build()
@@ -79,7 +80,6 @@ class RaceListFragment : Fragment() {
             findNavController().navigate(R.id.action_races_to_raceFragment)
         }
         raceAdapter.onGalleryButtonClickListener = {
-            viewModel.getPreviews(it.uid, 0)
             val bundle = Bundle()
             bundle.putString("uid", it.uid)
             findNavController().navigate(R.id.action_races_to_galleryFragment, bundle)

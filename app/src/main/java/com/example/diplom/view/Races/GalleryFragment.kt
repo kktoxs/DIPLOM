@@ -1,7 +1,6 @@
-package com.example.diplom.view
+package com.example.diplom.view.Races
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -9,9 +8,8 @@ import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
-import com.example.diplom.R
-import com.example.diplom.RaceViewModel
 import com.example.diplom.databinding.FragmentGalleryBinding
+import com.example.diplom.view.GalleryAdapter
 import java.lang.RuntimeException
 
 
@@ -20,12 +18,21 @@ class GalleryFragment : Fragment() {
     private lateinit var viewModel: RaceViewModel
     private lateinit var galleryAdapter: GalleryAdapter
     private lateinit var currRaceUID: String
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        currRaceUID =
+            arguments?.getString("uid")
+                ?: throw RuntimeException("Unknown race $currRaceUID")
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentGalleryBinding.inflate(layoutInflater)
         viewModel = ViewModelProvider(requireActivity())[RaceViewModel::class.java]
+        viewModel.getPreviews(currRaceUID, 0)
         viewModel.previews.observe(viewLifecycleOwner) {
             if (it != null) {
                 galleryAdapter.updateList(it.previewURL)
@@ -33,13 +40,6 @@ class GalleryFragment : Fragment() {
             binding.noPhotos.isVisible = (it == null)
         }
         return binding.root
-    }
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        currRaceUID =
-            arguments?.getString("uid")
-                ?: throw RuntimeException("Unknown race $currRaceUID")
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

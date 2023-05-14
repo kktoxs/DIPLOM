@@ -3,7 +3,7 @@
 
     <item
         android:id="@+id/racesList"
-        android:icon="@drawable/racing_helmet"
+        android:icon="@drawable/moto_helmet"
         android:title="@string/races" />
 
     <item

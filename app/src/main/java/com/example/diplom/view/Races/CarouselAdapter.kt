@@ -1,4 +1,4 @@
-package com.example.diplom.view
+package com.example.diplom.view.Races
 
 import android.view.LayoutInflater
 import android.view.View

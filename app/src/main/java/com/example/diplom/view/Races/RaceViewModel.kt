@@ -1,4 +1,4 @@
-package com.example.diplom
+package com.example.diplom.view.Races
 
 import android.util.Log
 import androidx.lifecycle.MutableLiveData

@@ -12,7 +12,7 @@
 
     <fragment
         android:id="@+id/raceListFragment"
-        android:name="com.example.diplom.view.RaceListFragment"
+        android:name="com.example.diplom.view.Races.RaceListFragment"
         android:label="fragment_race_list"
         tools:layout="@layout/fragment_race_list">
         <action
@@ -26,7 +26,7 @@
     </fragment>
     <fragment
         android:id="@+id/raceFragment"
-        android:name="com.example.diplom.view.RaceFragment"
+        android:name="com.example.diplom.view.Races.RaceFragment"
         android:label="fragment_race"
         tools:layout="@layout/fragment_race">
         <action
@@ -37,7 +37,7 @@
 
     <fragment
         android:id="@+id/galleryFragment"
-        android:name="com.example.diplom.view.GalleryFragment"
+        android:name="com.example.diplom.view.Races.GalleryFragment"
         android:label="fragment_gallery"
         tools:layout="@layout/fragment_gallery" />
     </navigation>

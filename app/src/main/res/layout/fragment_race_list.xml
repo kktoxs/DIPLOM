@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".view.RaceListFragment">
+    tools:context=".view.Races.RaceListFragment">
 
     <Toolbar
         android:id="@+id/toolbar"
@@ -13,6 +13,7 @@
         android:background="@color/champagne">
 
         <TextView
+            android:fontFamily="@font/comfortaa"
             style="@style/DateText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -21,6 +22,7 @@
             android:textColor="@color/black" />
 
         <TextView
+            android:fontFamily="@font/comfortaa"
             android:id="@+id/from_tv"
             style="@style/DateText"
             android:layout_width="wrap_content"
@@ -29,6 +31,7 @@
             tools:text="21.04.2022" />
 
         <TextView
+            android:fontFamily="@font/comfortaa"
             style="@style/DateText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -37,6 +40,7 @@
             android:textColor="@color/black" />
 
         <TextView
+            android:fontFamily="@font/comfortaa"
             android:id="@+id/to_tv"
             style="@style/DateText"
             android:layout_width="wrap_content"

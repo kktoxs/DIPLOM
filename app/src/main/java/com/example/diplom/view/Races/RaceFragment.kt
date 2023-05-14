@@ -1,6 +1,5 @@
-package com.example.diplom.view
+package com.example.diplom.view.Races
 
-import android.content.Context
 import android.content.res.Resources
 import android.os.Bundle
 import android.util.Log
@@ -13,9 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.CompositePageTransformer
 import androidx.viewpager2.widget.MarginPageTransformer
 import com.bumptech.glide.Glide
-import com.example.diplom.RaceViewModel
 import com.example.diplom.data.FullRace
-import com.example.diplom.databinding.FragmentRaceBinding
 import com.example.diplom.databinding.FragmentRaceNewBinding
 
 class RaceFragment : Fragment() {
