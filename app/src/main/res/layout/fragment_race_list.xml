@@ -13,38 +13,38 @@
         android:background="@color/champagne">
 
         <TextView
-            android:fontFamily="@font/comfortaa"
-            style="@style/DateText"
+            android:textSize="16sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="10dp"
+            android:fontFamily="@font/comfortaa"
             android:text="Гонки с"
             android:textColor="@color/black" />
 
         <TextView
-            android:fontFamily="@font/comfortaa"
             android:id="@+id/from_tv"
             style="@style/DateText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="10dp"
+            android:fontFamily="@font/comfortaa"
             tools:text="21.04.2022" />
 
         <TextView
-            android:fontFamily="@font/comfortaa"
-            style="@style/DateText"
+            android:textSize="16sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="10dp"
+            android:fontFamily="@font/comfortaa"
             android:text="по"
             android:textColor="@color/black" />
 
         <TextView
-            android:fontFamily="@font/comfortaa"
             android:id="@+id/to_tv"
             style="@style/DateText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/comfortaa"
             tools:text="23.12.2023" />
 
     </Toolbar>

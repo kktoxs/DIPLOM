@@ -28,13 +28,14 @@ class MainActivity : AppCompatActivity() {
 
         val navController = Navigation.findNavController(this, R.id.nav_host_fragment)
         bottomNavigationView = findViewById(R.id.bottom_nav_bar)
-       /* bottomNavigationView.setOnItemSelectedListener { it ->
+        bottomNavigationView.setOnItemReselectedListener { it ->
             val selectedGraph = navController.graph.findNode(it.itemId) as NavGraph
             selectedGraph.let {
                 navController.popBackStack(it.startDestinationId, false)
             }
             //navController.popBackStack()
         }
+        /*
         bottomNavigationView.setOnItemSelectedListener {
             navController.popBackStack()
         }*/
