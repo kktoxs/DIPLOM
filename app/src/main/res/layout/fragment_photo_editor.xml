@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginHorizontal="20dp"
+    android:layout_marginVertical="30dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".view.PhotoEditorFragment">
+
+    <TextView
+        android:id="@+id/resize_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="14sp"
+        android:text="Изменение размеров" />
+
+    <EditText
+        android:id="@+id/set_width"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/resize_title"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="12sp"
+        android:layout_marginTop="8dp"
+        android:hint="ширина"/>
+
+    <EditText
+        android:id="@+id/set_height"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/set_width"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="12sp"
+        android:hint="высота"/>
+
+    <Button
+        android:id="@+id/resize"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        app:layout_constraintTop_toTopOf="@id/set_width"
+        app:layout_constraintBottom_toBottomOf="@id/set_height"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:backgroundTint="@color/bittersweet"
+        android:textSize="12sp"
+        android:text="изменить размер"/>
+
+
+
+
+    <EditText
+        android:id="@+id/set_scale"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/set_height"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="8dp"
+        android:textSize="12sp"
+        android:hint="масштаб"/>
+
+    <Button
+        android:id="@+id/scale"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        app:layout_constraintTop_toTopOf="@id/set_scale"
+        app:layout_constraintBottom_toBottomOf="@id/set_scale"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:backgroundTint="@color/bittersweet"
+        android:textSize="12sp"
+        android:text="изменить масштаб"/>
+
+    <Button
+        android:id="@+id/resize_to_recognition"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        app:layout_constraintTop_toBottomOf="@id/scale"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@color/bittersweet"
+        android:textSize="12sp"
+        android:text="изменить для распознавания"/>
+
+
+    <View
+        android:id="@+id/divider"
+        android:layout_marginHorizontal="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/grey"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/filter_title"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/divider"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="14sp"
+        android:text="Наложение фильтров" />
+
+    <Button
+        android:id="@+id/black_white"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        app:layout_constraintTop_toBottomOf="@id/filter_title"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@color/bittersweet"
+        android:textSize="12sp"
+        android:text="черно-белый"/>
+
+    <Button
+        android:id="@+id/blur"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        app:layout_constraintTop_toBottomOf="@id/black_white"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@color/bittersweet"
+        android:textSize="12sp"
+        android:text="размытие"/>
+
+    <Button
+        android:id="@+id/sharpness"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        app:layout_constraintTop_toBottomOf="@id/blur"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@color/bittersweet"
+        android:textSize="12sp"
+        android:text="острота"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
