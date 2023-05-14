@@ -16,7 +16,6 @@ data class Race(
     val uid: String
 )
 
-
 data class FullRace(
     val data: Data
 )

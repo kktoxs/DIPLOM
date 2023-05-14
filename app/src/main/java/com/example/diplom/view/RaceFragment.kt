@@ -25,13 +25,13 @@ class RaceFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+        viewModel = ViewModelProvider(requireActivity())[RaceViewModel::class.java]
         binding = FragmentRaceNewBinding.inflate(layoutInflater)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel = ViewModelProvider(requireActivity())[RaceViewModel::class.java]
         viewModel.currRaceInfo.observe(viewLifecycleOwner) {
             if (it != null) {
                 binding.progressBar.visibility = View.GONE
@@ -55,10 +55,15 @@ class RaceFragment : Fragment() {
             .load("https://fget.marshalone.ru/files/race/uid/" + race.data.titlePicture)
             .into(binding.titleIv)
 
-        setupAdapter(race.data.city, race.data.date, race.data.sportType, race.data.competitorsCount)
+        setupAdapter(
+            race.data.city,
+            race.data.date,
+            race.data.sportType,
+            race.data.competitorsCount
+        )
     }
 
-    private fun setupAdapter(place: String, date: String, raceType: String, competitors: Int){
+    private fun setupAdapter(place: String, date: String, raceType: String, competitors: Int) {
         val carouselAdapter = CarouselAdapter(place, date, raceType, competitors)
         val compositePageTransformer = CompositePageTransformer()
         compositePageTransformer.addTransformer(MarginPageTransformer((15 * Resources.getSystem().displayMetrics.density).toInt()))
@@ -75,8 +80,8 @@ class RaceFragment : Fragment() {
         }
     }
 
-    override fun onStop() {
-        super.onStop()
-        viewModel.closeRace()
+    override fun onDestroy() {
+        super.onDestroy()
+        //viewModel.closeRace()
     }
 }

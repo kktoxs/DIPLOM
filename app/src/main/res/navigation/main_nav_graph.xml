@@ -13,13 +13,11 @@
         <action
             android:id="@+id/action_races_to_raceFragment"
             app:destination="@id/raceFragment"
-            app:popUpTo="@id/main_nav_graph"
-            app:popUpToInclusive="true" />
+            app:popUpToInclusive="false" />
         <action
             android:id="@+id/action_races_to_galleryFragment"
             app:destination="@id/galleryFragment"
-            app:popUpTo="@id/main_nav_graph"
-            app:popUpToInclusive="true" />
+            app:popUpToInclusive="false" />
     </fragment>
     <fragment
         android:id="@+id/raceFragment"
@@ -29,8 +27,7 @@
         <action
             android:id="@+id/action_raceFragment_to_galleryFragment"
             app:destination="@id/galleryFragment"
-            app:popUpTo="@id/main_nav_graph"
-            app:popUpToInclusive="true" />
+            app:popUpToInclusive="false" />
     </fragment>
     <fragment
         android:id="@+id/new_photo"

@@ -32,20 +32,20 @@ class RaceViewModel() : ViewModel() {
     }
 
     fun getRaceInfo(uid: String) {
+        currRaceInfo.postValue(null)
         viewModelScope.launch(Dispatchers.IO) {
             val response = repository.getRaceInfo(uid)
             currRaceInfo.postValue(response.body())
         }
     }
 
-    fun closeRace() {
-        currRaceInfo.postValue(null)
-    }
+    /*  fun closeRace() {
+          currRaceInfo.postValue(null)
+      }*/
 
     fun getPreviews(uid: String, offset: Int) {
         viewModelScope.launch(Dispatchers.IO) {
             val response = repository.getPreviews(uid, offset)
-
             previews.postValue(response.body())
         }
     }
