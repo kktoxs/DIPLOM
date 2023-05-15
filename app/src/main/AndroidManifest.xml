@@ -23,7 +23,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DIPLOM"
         android:enableOnBackInvokedCallback="true"
-        tools:targetApi="tiramisu">
+        tools:targetApi="tiramisu"
+        tools:replace="android:theme">
 
         <provider
             android:authorities="com.example.diplom.fileprovider"

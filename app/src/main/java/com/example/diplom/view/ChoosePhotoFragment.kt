@@ -37,7 +37,7 @@ class ChoosePhotoFragment : Fragment() {
         viewModel.originalPhoto.observe(viewLifecycleOwner) {
             it.let { binding.testImage.setImageBitmap(it) }
             if (it != null) {
-                Resizer.resizeCommon(it, WIDTH, HEIGHT, true)
+                Resizer.resizeRs(it, WIDTH, HEIGHT, requireContext())
             }
         }
         binding.openGallery.setOnClickListener {
