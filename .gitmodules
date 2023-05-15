@@ -1,0 +1,3 @@
+[submodule "PhotoEditorModule"]
+	path = PhotoEditorModule
+	url = https://github.com/katekaa/PhotoEditorModule.git

@@ -11,6 +11,9 @@ import androidx.core.content.FileProvider
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.example.diplom.databinding.FragmentChoosePhotoBinding
+import com.example.diplom.view.PhotoViewModel.Companion.HEIGHT
+import com.example.diplom.view.PhotoViewModel.Companion.WIDTH
+import com.example.resizemodule.resizeUtils.Resizer
 import java.io.File
 
 
@@ -33,6 +36,9 @@ class ChoosePhotoFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         viewModel.originalPhoto.observe(viewLifecycleOwner) {
             it.let { binding.testImage.setImageBitmap(it) }
+            if (it != null) {
+                Resizer.resizeCommon(it, WIDTH, HEIGHT, true)
+            }
         }
         binding.openGallery.setOnClickListener {
             openGallery()
