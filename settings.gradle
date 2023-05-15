@@ -15,3 +15,4 @@ dependencyResolutionManagement {
 }
 rootProject.name = "DIPLOM"
 include ':app'
+include ':resize-module'
