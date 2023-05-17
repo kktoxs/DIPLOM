@@ -13,5 +13,14 @@
         android:background="@color/orange"
         android:scaleType="centerCrop"
         app:shapeAppearanceOverlay="@style/AllCornersCut"
-        tools:src="@drawable/racing_helmet" />
+        />
+
+    <TextView
+        android:id="@+id/pos"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textSize="30sp"
+        tools:text="24"
+        android:textColor="@color/bittersweet"
+        />
 </FrameLayout>

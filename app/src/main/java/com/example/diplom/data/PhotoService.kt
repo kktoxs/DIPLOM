@@ -7,11 +7,24 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface PhotoService {
-    @GET("getPreviews?limit=8")
+  /*  @GET("getPreviews?limit=8")
     suspend fun getPreviews(
         @Query("raceUID") raceUID: String,
         @Query("offset") offset: Int
-    ): Response<Preview>
+    ): Response<Previews>
+*/
+    @GET("getPreviews?limit=24")
+    suspend fun getPreviews(
+        @Query("raceUID") raceUID: String,
+        @Query("offset") offset: Int,
+        @Query("competitor") competitor: Int? = null
+    ): Response<Previews>
+
+
+    @GET("meta")
+    suspend fun getMeta(
+        @Query("UUID") raceUID: String,
+    ): Response<Meta>
 
     companion object {
         private const val BASE_URL = "https://photo.marshalone.ru/api/photo/"

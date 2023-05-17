@@ -28,7 +28,7 @@
         android:id="@+id/raceFragment"
         android:name="com.example.diplom.view.Races.RaceFragment"
         android:label="fragment_race"
-        tools:layout="@layout/fragment_race">
+        tools:layout="@layout/fragment_race_new">
         <action
             android:id="@+id/action_raceFragment_to_galleryFragment"
             app:destination="@id/galleryFragment"
@@ -39,7 +39,24 @@
         android:id="@+id/galleryFragment"
         android:name="com.example.diplom.view.Races.GalleryFragment"
         android:label="fragment_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        tools:layout="@layout/fragment_gallery" >
+        <action
+            android:id="@+id/action_galleryFragment_to_participantsListFragment"
+            app:destination="@id/participantsListFragment4" />
+        <action
+            android:id="@+id/action_galleryFragment_to_metaFragment"
+            app:destination="@id/metaFragment" />
+    </fragment>
+        <fragment
+            android:id="@+id/participantsListFragment4"
+            android:name="com.example.diplom.view.Races.ParticipantsListFragment"
+            android:label="fragment_participants_list"
+            tools:layout="@layout/fragment_participants_list" />
+        <fragment
+            android:id="@+id/metaFragment"
+            android:name="com.example.diplom.view.Races.MetaFragment"
+            android:label="fragment_meta"
+            tools:layout="@layout/fragment_meta" />
     </navigation>
 
     <navigation

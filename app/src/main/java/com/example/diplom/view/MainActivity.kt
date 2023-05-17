@@ -33,12 +33,7 @@ class MainActivity : AppCompatActivity() {
             selectedGraph.let {
                 navController.popBackStack(it.startDestinationId, false)
             }
-            //navController.popBackStack()
         }
-        /*
-        bottomNavigationView.setOnItemSelectedListener {
-            navController.popBackStack()
-        }*/
         NavigationUI.setupWithNavController(bottomNavigationView, navController)
 
     }

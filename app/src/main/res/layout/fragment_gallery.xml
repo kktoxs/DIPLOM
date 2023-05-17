@@ -1,17 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".view.Races.GalleryFragment">
 
+    <Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@color/champagne">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/participants_list_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/bittersweet"
+            android:text="@string/choose_participants" />
+
+        <TextView
+            android:id="@+id/curr_part_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginEnd="30dp"
+            android:textSize="20sp"
+            android:textColor="@color/bittersweet"
+            android:fontFamily="@font/comfortaa"
+            android:textStyle="bold"
+            tools:text="Участник 22" />
+    </Toolbar>
+
     <TextView
+
         android:id="@+id/no_photos"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fontFamily="@font/comfortaa"
         android:gravity="center"
-        android:text="Нет фотографий"
+        android:text="@string/no_photos"
         android:textColor="@color/bittersweet"
         android:textSize="25sp"
         android:textStyle="bold"
@@ -23,4 +50,4 @@
         android:layout_height="match_parent"
         tools:listitem="@layout/gallery_item" />
 
-</FrameLayout>
+</LinearLayout>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".view.Races.MetaFragment">
+
+    <ImageView
+        android:id="@+id/meta_iv"
+        android:layout_width="match_parent"
+        android:layout_height="600dp"
+        tools:src="@color/orange" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        tools:listitem="@layout/meta_item"
+        android:id="@+id/meta_rv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

@@ -21,7 +21,8 @@ class RaceListFragment : Fragment() {
     private lateinit var viewModel: RaceViewModel
     private lateinit var binding: FragmentRaceListBinding
     private lateinit var raceAdapter: RaceListAdapter
-    private var galleryIsEmpty: Boolean = true
+
+    //private var galleryIsEmpty: Boolean = true
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -38,16 +39,17 @@ class RaceListFragment : Fragment() {
             binding.toTv.text = it.second
         }
 
-        viewModel.galleryIsNull.observe(viewLifecycleOwner) {
-            galleryIsEmpty = it
-            Log.d("isEmpty", galleryIsEmpty.toString())
-        }
+        /* viewModel.galleryIsNull.observe(viewLifecycleOwner) {
+             galleryIsEmpty = it
+             Log.d("isEmpty", galleryIsEmpty.toString())
+         }*/
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupAdapter()
+        viewModel.clearParticipant()
         binding.toolbar.setOnClickListener {
             val builder = MaterialDatePicker.Builder
                 .dateRangePicker()
@@ -82,6 +84,7 @@ class RaceListFragment : Fragment() {
         raceAdapter.onGalleryButtonClickListener = {
             val bundle = Bundle()
             bundle.putString("uid", it.uid)
+            viewModel.clearPreviews()
             findNavController().navigate(R.id.action_races_to_galleryFragment, bundle)
         }
     }

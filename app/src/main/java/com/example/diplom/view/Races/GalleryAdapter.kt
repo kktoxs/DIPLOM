@@ -1,4 +1,4 @@
-package com.example.diplom.view
+package com.example.diplom.view.Races
 
 import android.content.Context
 import android.util.Log
@@ -11,12 +11,16 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.diplom.R
+import com.example.diplom.data.Images
 
 
 class GalleryAdapter(private val context: Context, private val callback: (Int) -> Unit) :
     ListAdapter<String, GalleryAdapter.GalleryViewHolder>(GalleryDiffUtilCallback()) {
+    var onPhotoClickListener: ((String) -> Unit)? = null
+
     class GalleryViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
         val image: ImageView = view.findViewById(R.id.preview_image)
+        //val num: TextView = view.findViewById(R.id.pos)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GalleryViewHolder {
@@ -28,15 +32,20 @@ class GalleryAdapter(private val context: Context, private val callback: (Int) -
     override fun onBindViewHolder(holder: GalleryViewHolder, position: Int) {
         val previewURL = getItem(position)
 
-        Log.d("url", previewURL)
+        //Log.d("url", previewURL)
         Glide.with(context)
             .load("https://photo.marshalone.ru/api/photo/file/get?type=resized&UUID=$previewURL")
             .into(holder.image)
 
+        holder.image.setOnClickListener {
+            onPhotoClickListener?.invoke(previewURL)
+        }
+        //holder.num.text = position.toString()
+
         if (itemCount - position == 1) {
             callback(itemCount)
-            Log.d("item count", itemCount.toString())
-            Log.d("position", position.toString())
+            //Log.d("item count", itemCount.toString())
+            //Log.d("position", position.toString())
         }
     }
 
@@ -44,6 +53,7 @@ class GalleryAdapter(private val context: Context, private val callback: (Int) -
         if (newData.isNotEmpty()) {
             val newList = currentList + newData
             submitList(newList)
+            Log.d("updateList", newList.size.toString())
         } else {
             Log.d("updateList", "empty")
         }

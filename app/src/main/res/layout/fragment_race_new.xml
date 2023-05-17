@@ -6,10 +6,10 @@
     android:layout_height="match_parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:clipChildren="false"
-        android:clipToPadding="false"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:clipChildren="false"
+        android:clipToPadding="false">
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/title_iv"
@@ -55,6 +55,7 @@
             style="@style/MaterialAlertDialog.Material3.Body.Text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
             android:maxLines="15"
             app:layout_constraintTop_toBottomOf="@id/info_vp"
             tools:text="Даты 17-19 июня
@@ -75,6 +76,20 @@
                                                                                                     Классы делятся в зависимости от характеристик мотоцикла, в некоторых случаях - и от регалий спортсменов (подробнее в информации о соревновании)"
 
             />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/gallery_button"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_margin="10dp"
+            android:fontFamily="@font/comfortaa"
+            android:text="@string/gallery"
+            android:textColor="@color/bittersweet"
+            android:textStyle="bold"
+            app:strokeColor="@color/bittersweet"
+            app:strokeWidth="1dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/description_tv" />
 
         <ProgressBar
             android:id="@+id/progressBar"

@@ -8,4 +8,7 @@
     <string name="cart">Корзина</string>
     <string name="gallery">Галерея</string>
     <string name="no_races">Не найдены гонки за выбранный период</string>
+    <string name="participants_list">Список участников</string>
+    <string name="choose_participants">Выбрать участника</string>
+    <string name="no_photos">Нет фотографий</string>
 </resources>
